@@ -479,7 +479,10 @@ function About() {
         
           {/* ================= NEW ARRIVALS ================= */}
         <li className="dropdown">
-          New Arrivals
+                   <Link to="/NewArrivals" className="nav-link"> 
+ New Arrivals <span className="dropdown-arrow">▾</span> 
+  </Link>
+       
           <div className="mega-menu">
           {/* LEFT SIDE */}
                 <div className="mega-left">
@@ -506,7 +509,9 @@ function About() {
         
         {/* ================= SERVICES WITHIN HOURS ================= */}
         <li className="dropdown">
-          Services within hours
+               <Link to="/Services" className="nav-link"> 
+  Services within hours <span className="dropdown-arrow">▾</span> 
+  </Link>
           <div className="mega-menu">
           {/* LEFT SIDE */}
                 <div className="mega-left">

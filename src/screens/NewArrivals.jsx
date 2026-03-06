@@ -1,5 +1,15 @@
+import "./NewArrivals.css";
 
-import "./Privacy.css";
+import hero from "../images/new-trendy.jpg";
+import neon1 from "../images/Neon Signage.jpg";
+import cushion from "../images/cushion.jpg";
+import frame from "../images/photo-frame.jpg";
+import decal from "../images/wall-decal.jpg";
+import mug1 from "../images/mug.jpg";
+import clock from "../images/clock.jpg";
+import caricature from "../images/caricature.jpg";
+import crystal from "../images/crystal.jpg";
+
 import { useState } from "react";
 import {
   FaSearch,
@@ -26,27 +36,38 @@ import laserCrystal from "../images/Laser Engraved Crystal.jpg";
 import printedTshirt from "../images/Printed T-shirt.jpg";
 import customMug from "../images/Custom Mug.jpg";
 import Fastprinting from "../images/Fast Printing Service.jpg"
-import Neon from "..//images/Neon Signage.jpg";
-import Proprints from "..//images/PROPRINTS.jpg";
+import Neon from "../images/Neon Signage.jpg";
+import Proprints from "../images/PROPRINTS.jpg";
 
-const Privacy = () => {
-  const [showSearch, setShowSearch] = useState(false);
+
+function NewArrivals() {
+    const [showSearch, setShowSearch] = useState(false);
+    const products = [
+  { title: "Custom Neon Signage", img: neon1 },
+  { title: "Cushion", img: cushion },
+  { title: "Photo Frame", img: frame },
+  { title: "Custom Wall Decals", img: decal },
+  { title: "Custom Mugs", img: mug1 },
+  { title: "Customize Clock", img: clock },
+  { title: "Caricature", img: caricature },
+  { title: "3D Laser Engraved Crystal", img: crystal }
+];
   return (
-
     <div className="home">
-    
-          {/* ================= NAVBAR ================= */}
+
+    {/* ================= NAVBAR ================= */}
           <nav className="navbar">
-           <Link to="/home">
-         <img src={Proprints} alt="logo" className="logo" />
-            </Link>
-                               
+          <Link to="/home">
+ <img src={Proprints} alt="logo" className="logo" />
+         </Link>
+                              
+    
             <ul className="nav-links">
       
     
       {/* ================= STATIONERY ================= */}
       <li className="dropdown">
-          <Link to="/stationery" className="nav-link">
+      <Link to="/stationery" className="nav-link">
     Stationery <span className="dropdown-arrow">▾</span>
   </Link>
       <div className="mega-menu">
@@ -125,6 +146,7 @@ const Privacy = () => {
     </li>
       {/* ================= PROMOTIONAL ================= */}
      <li className="dropdown">
+    
  <Link to="/promotional" className="nav-link">
     Promotional Materials <span className="dropdown-arrow">▾</span> </Link> 
       <div className="mega-menu">
@@ -197,7 +219,7 @@ const Privacy = () => {
     
     {/* ================= SIGNS & MARKETING ================= */}
     <li className="dropdown">
-     <Link to="/signs" className="nav-link"> 
+       <Link to="/signs" className="nav-link"> 
     Signs & Marketing <span className="dropdown-arrow">▾</span> 
   </Link>
      <div className="mega-menu">
@@ -273,9 +295,10 @@ const Privacy = () => {
     </li>
     {/* ================= BOX & PACKAGING ================= */}
     <li className="dropdown">
-             <Link to="/BoxPackaging" className="nav-link"> 
+        <Link to="/BoxPackaging" className="nav-link"> 
   Box & Packaging<span className="dropdown-arrow">▾</span> 
   </Link>
+      
      <div className="mega-menu">
       {/* LEFT SIDE */}
             <div className="mega-left">
@@ -421,7 +444,7 @@ const Privacy = () => {
     </li>
       {/* ================= APPAREL ================= */}
     <li className="dropdown">
-      <Link to="/Apparel" className="nav-link"> 
+    <Link to="/Apparel" className="nav-link"> 
    Apparel <span className="dropdown-arrow">▾</span> 
   </Link>
       <div className="mega-menu">
@@ -466,10 +489,10 @@ const Privacy = () => {
     
       {/* ================= NEW ARRIVALS ================= */}
     <li className="dropdown">
-                <Link to="/NewArrivals" className="nav-link"> 
+      
+            <Link to="/NewArrivals" className="nav-link"> 
  New Arrivals <span className="dropdown-arrow">▾</span> 
   </Link>
-       
       <div className="mega-menu">
       {/* LEFT SIDE */}
             <div className="mega-left">
@@ -496,7 +519,8 @@ const Privacy = () => {
     
     {/* ================= SERVICES WITHIN HOURS ================= */}
     <li className="dropdown">
-       <Link to="/Services" className="nav-link"> 
+     
+        <Link to="/Services" className="nav-link"> 
   Services within hours <span className="dropdown-arrow">▾</span> 
   </Link>
       <div className="mega-menu">
@@ -573,93 +597,82 @@ const Privacy = () => {
             </div>
           
           )}
-    <div className="privacy-container">
-      <div className="privacy-content">
+    <div></div>
+      {/* HERO */}
+      <section className="hero">
+        <img src={hero} alt="banner" />
+      </section>
 
-        <h1>Privacy Policy</h1>
+      {/* PRODUCTS */}
+      <section className="products">
+        <h2>Always trendy products</h2>
 
+        <div className="product-grid">
+          {products.map((item, index) => (
+            <div className="product-card" key={index}>
+              <img src={item.img} alt={item.title} />
+
+              <div className="card-bottom">
+                <h3>{item.title}</h3>
+                <span className="arrow">→</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* DESCRIPTION */}
+      <section className="description">
         <p>
-          Your privacy is very important to us. We do not sell or rent your
-          personal information to third parties for their marketing purposes
-          without your explicit consent.
+          Shivani Enterprises always updated new arrivals or trending customized
+          items to our esteemed customer. We do print almost of all types of
+          stuff (paper, plastic, metal, wood, ceramic and many more materials.
         </p>
+      </section>
 
-        <h2>Your Privacy – Our Commitment</h2>
-        <p>
-          At Shivani Enterprises, we are extremely proud of our commitment to
-          protect your privacy. We value your trust in us and work hard to earn
-          your confidence so that you can use our services without hesitation.
-        </p>
+      {/* FAQ */}
+      <section className="faq">
+        <h2>Frequently Asked Questions</h2>
 
-        <h2>Information We Collect</h2>
-        <p>
-          When you use our website, we may collect personal information such as:
-        </p>
+        <div className="faq-grid">
 
-        <ul>
-          <li>Name</li>
-          <li>Email Address</li>
-          <li>Phone Number</li>
-          <li>Billing & Shipping Address</li>
-          <li>Payment Details</li>
-        </ul>
+          <div>
+            <details>
+              <summary>What are customized products?</summary>
+              <p>Customized products are items printed or designed as per customer choice.</p>
+            </details>
 
-        <p>
-          We collect this information to provide a safe, smooth, and customized
-          experience.
-        </p>
+            <details>
+              <summary>What types of products can be customized?</summary>
+              <p>Mugs, frames, neon lights, t-shirts, cushions, photo gifts etc.</p>
+            </details>
 
-        <h2>Use of Your Information</h2>
-        <p>Your information is used to:</p>
+            <details>
+              <summary>How can I personalize a product?</summary>
+              <p>You can upload images, text or design while ordering.</p>
+            </details>
 
-        <ul>
-          <li>Process your orders</li>
-          <li>Improve our website services</li>
-          <li>Send order updates and notifications</li>
-          <li>Provide customer support</li>
-          <li>Prevent fraud and illegal activities</li>
-        </ul>
+            <details>
+              <summary>Can I see preview before order?</summary>
+              <p>Yes, most products provide preview or sample option.</p>
+            </details>
 
-        <h2>Cookies</h2>
-        <p>
-          We use cookies to enhance your browsing experience, analyze website
-          traffic, and improve our services. You can disable cookies in your
-          browser settings if you prefer.
-        </p>
+            <details>
+              <summary>What are popular gifting occasions?</summary>
+              <p>Birthdays, anniversaries, weddings and corporate gifts.</p>
+            </details>
+          </div>
 
-        <h2>Disclosure of Information</h2>
-        <p>
-          We may share your information with trusted service providers who help
-          us operate our business (such as payment gateways or delivery
-          services). These providers are obligated to protect your data.
-        </p>
+          <div>
+            <details>
+              <summary>What are the most common methods used for personalization?</summary>
+              <p>UV printing, laser engraving, sublimation printing.</p>
+            </details>
+          </div>
 
-        <h2>Children’s Privacy</h2>
-        <p>
-          Our services are not intended for children under 18. We do not
-          knowingly collect personal information from minors.
-        </p>
-
-        <h2>Security</h2>
-        <p>
-          We use secure server software (SSL) to protect your personal
-          information. All customer data is protected against unauthorized
-          access.
-        </p>
-
-        <h2>Your Consent</h2>
-        <p>
-          By using our website, you consent to the collection and use of your
-          information as described in this Privacy Policy.
-        </p>
-
-        <p className="last-update">
-          Last Updated: March 2026
-        </p>
-
-      </div>
-
-         {/* ================= FOOTER ================= */}
+        </div>
+      </section>
+{/* ================= FOOTER ================= */}
           <footer className="footer">
      
            <div className="footer-container">
@@ -673,8 +686,8 @@ const Privacy = () => {
                </h2>
      
                <p><MdEmail /> suresh_shivanient@yahoo.com</p>
-               <p><FaPhone /> +91 062621 56969</p>
-               <p><FaLocationDot />  first floor, Mounika Towers, 2-32, Kavuri Hills, Madhapur, Hyderabad, Telangana 500081</p>
+               <p><FaPhone /> +91 92112 53015</p>
+               <p><FaLocationDot /> first floor, Mounika Towers, 2-32, Kavuri Hills, Madhapur, Hyderabad, Telangana 500081</p>
      
                <div className="map">
                  <iframe
@@ -726,10 +739,10 @@ const Privacy = () => {
            </div>
      
          </footer>
-       </div>
+
 
     </div>
   );
 }
 
-export default Privacy;
+export default NewArrivals;

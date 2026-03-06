@@ -251,6 +251,9 @@ object-fit:contain;
   background: white;
   color: black;
 }
+.hero {
+  padding: 20px 1px;
+}
 .grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);

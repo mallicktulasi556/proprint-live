@@ -247,29 +247,88 @@ object-fit:contain;
   background: white;
   color: black;
 }
-.subtitle{
-margin-top:10px;
-color:#777;
+
+/* CENTER SEARCH BOX */
+.search-container {
+  width: 60%;
+  max-width: 800px;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 22px 30px;
+  border-radius: 50px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  font-size: 20px;
+  outline: none;
+  text-align: left;
+}
+
+.search-container input::placeholder {
+  color: #ddd;
+  font-size: 18px;
+}
+
+/* Smooth fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:60px;
+background:#f7f7f7;
 }
 .hero {
   align-items: center;
   padding: 20px 1px;
 }
-.grid{
+/* PRODUCTS */
+
+.products{
+padding:60px;
+text-align:center;
+}
+
+.product-grid{
+margin-top:40px;
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:30px;
-margin-top:40px;
 }
 
-.card{
+.product-card{
 background:#fff;
 border-radius:12px;
 overflow:hidden;
-box-shadow:0 2px 10px rgba(0,0,0,0.08);
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+transition:0.3s;
 }
 
-.card img{
+.product-card:hover{
+transform:translateY(-5px);
+}
+
+.product-card img{
 width:100%;
 height:220px;
 object-fit:cover;
@@ -282,16 +341,35 @@ align-items:center;
 padding:15px;
 }
 
-.content{
-padding:60px;
-text-align:center;
-line-height:1.7;
+.arrow{
+background:#eee;
+padding:10px;
+border-radius:50%;
 }
+
+/* DESCRIPTION */
+
+.description{
+text-align:center;
+padding:40px 120px;
+color:#555;
+line-height:1.6;
+}
+
+/* FAQ */
 
 .faq{
 padding:60px;
-max-width:900px;
-margin:auto;
+}
+
+.faq h2{
+margin-bottom:30px;
+}
+
+.faq-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
 }
 
 details{
@@ -300,6 +378,9 @@ border-bottom:1px solid #ddd;
 cursor:pointer;
 }
 
+summary{
+font-weight:500;
+}
 /* FOOTER */
 .footer {
   background: #f5f5f5;

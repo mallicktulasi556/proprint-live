@@ -89,7 +89,7 @@ const nightServices = [
 ];
 return(
 
-<div className="services">
+<div className="home">
     {/* ================= NAVBAR ================= */}
           <nav className="navbar">
           <Link to="/home">
@@ -524,7 +524,10 @@ return(
     
       {/* ================= NEW ARRIVALS ================= */}
     <li className="dropdown">
-      New Arrivals
+                 <Link to="/NewArrivals" className="nav-link"> 
+ New Arrivals <span className="dropdown-arrow">▾</span> 
+  </Link>
+       
       <div className="mega-menu">
       {/* LEFT SIDE */}
             <div className="mega-left">
@@ -551,7 +554,10 @@ return(
     
     {/* ================= SERVICES WITHIN HOURS ================= */}
     <li className="dropdown">
-      Services within hours
+     
+        <Link to="/Services" className="nav-link"> 
+  Services within hours <span className="dropdown-arrow">▾</span> 
+  </Link>
       <div className="mega-menu">
       {/* LEFT SIDE */}
             <div className="mega-left">
@@ -631,10 +637,6 @@ return(
 
 <section className="hero">
 <img src={hero}/>
-<div className="hero-text">
-<h1>SAME-DAY DELIVERY</h1>
-<p>Place your order by 7 p.m. to enjoy same-day delivery</p>
-</div>
 </section>
 
 

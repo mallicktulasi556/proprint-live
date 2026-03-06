@@ -14,6 +14,7 @@ import BoxPackaging from "./screens/BoxPackaging";
 import Gift from "./screens/Gift";
 import Apparel from "./screens/Apparel";
 import Services from "./screens/Services";
+import NewArrivals from "./screens/NewArrivals";
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
           <Route path="/gift" element={<Gift />} />
             <Route path="/apparel" element={<Apparel />} />
              <Route path="/services" element={<Services />} />
+             <Route path="/newarrivals" element={<NewArrivals />} />
+            
       </Routes>
   );
 }
