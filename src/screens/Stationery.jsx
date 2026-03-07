@@ -627,7 +627,7 @@ return (
 
 <section className="hero">
 <div className="hero-text">
-<h1>Make your business noticeable and unique.</h1>
+<h2>Make your business noticeable and unique.</h2>
 <p>
 Business Card, Envelope, Letterhead, ID Card and more
 products for your business first impression

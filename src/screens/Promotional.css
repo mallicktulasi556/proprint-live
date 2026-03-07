@@ -235,16 +235,23 @@ object-fit:contain;
   color: black;
 }
 
+/* HERO */
+
 .promo-hero img{
 width:100%;
-border-radius:6px;
-margin-bottom:40px;
+border-radius:10px;
+margin-bottom:50px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
+
+/* TITLE */
 
 .section-title{
 text-align:center;
-margin:50px 0 30px;
-font-size:30px;
+margin:60px 0 35px;
+font-size:32px;
+font-weight:600;
+font-family:"Poppins",sans-serif;
 }
 
 /* GRID */
@@ -252,22 +259,27 @@ font-size:30px;
 .grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:25px;
+gap: 25px;
 }
 
 /* CARD */
 
 .card{
 background:white;
-border-radius:10px;
+border-radius:14px;
 overflow:hidden;
-box-shadow:0 2px 10px rgba(0,0,0,0.08);
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
 cursor:pointer;
-transition:0.3s;
+transition:0.35s;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+position:relative;
 }
 
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
 
 .card img{
@@ -276,50 +288,90 @@ height:200px;
 object-fit:cover;
 }
 
+/* CARD BOTTOM */
 .card-bottom{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px;
+padding:18px;
+}
+
+.card-bottom span {
+    background: #eee;
+    padding: 10px;
+    border-radius: 50%;
+}
+.card-title{
+font-size:18px;
+font-weight:600;
+margin:0;
 }
 
 .arrow{
-background:#eee;
-padding:10px 14px;
-border-radius:50%;
+position:absolute;
+bottom:15px;
+right:15px;
+}
+
+.card:hover .arrow{
+background:#e31e24;
+color:white;
+transform:translateX(4px);
 }
 
 /* CONTENT */
 
 .promo-content{
-margin:80px auto;
+margin:90px auto;
 max-width:900px;
-line-height:1.7;
+line-height:1.8;
+font-size:16px;
+color:#555;
 }
 
 .promo-content h2{
 margin-bottom:20px;
+font-size:28px;
 }
 
 .promo-content h3{
 margin-top:30px;
+font-size:22px;
 }
 
 /* FAQ */
 
 .faq{
 max-width:900px;
-margin:40px auto;
+margin:50px auto;
 }
 
 details{
-border-bottom:1px solid #ddd;
-padding:15px 0;
+border-bottom:1px solid #eee;
+padding:16px 0;
+transition:0.2s;
 }
 
 summary{
 font-weight:600;
 cursor:pointer;
+font-size:17px;
+}
+
+details p{
+margin-top:10px;
+color:#666;
+line-height:1.6;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:900px){
+
+.grid{
+grid-template-columns:repeat(2,1fr);
+}
+
 }
 /* FOOTER */
 .footer {

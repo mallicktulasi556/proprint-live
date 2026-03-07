@@ -36,7 +36,10 @@ function RefundPolicy() {
           {/* ================= NAVBAR ================= */}
           <nav className="navbar">
             <div className="nav-left">
-             <img src={Proprints} alt="logo" className="logo" />
+                    <Link to="/home">
+              <img src={Proprints} alt="logo" className="logo" />
+                      </Link>
+                              
               </div>
     
             <ul className="nav-links">

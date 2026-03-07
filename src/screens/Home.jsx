@@ -42,9 +42,11 @@ import envelope from "../images/envelope.jpg";
 import posterPrinting from "../images/posterPrinting.jpg";
 import deliveryImg from "../images/deliveryImg.jpg";
 import authorImg from "../images/business-card.jpg";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 function Home() {
   const [showSearch, setShowSearch] = useState(false);
+  const navigate = useNavigate(); 
    const sliderRef = useRef(null);
 const slideLeft = () => {
   sliderRef.current.scrollBy({
@@ -60,15 +62,16 @@ const slideRight = () => {
   });
 };
 const stationery = [
-  { name: "businessCard", img: businessCard },
+  { name: "businessCard", img: businessCard,  link: "/visitingcard" },
   { name: "Letterhead", img: letterhead },
-  { name: "Stamp", img: stamp },
-  { name: "Bill Book", img: billBook },
-  { name: "ID Card", img: idCard },
-  { name: "Cash Voucher", img: cashVoucher },
-  { name: "Envelope", img: envelope },
-  { name: "Thank You Card", img: thankYou }
+  { name: "Stamp", img: stamp, link: "/stamp" },
+  { name: "Bill Book", img: billBook, link:"/billbook"},
+  { name: "ID Card", img: idCard, link: "/visitingcard" },
+  { name: "Cash Voucher", img: cashVoucher, link:"/cashvoucher" },
+  { name: "Envelope", img: envelope, link:"/Envelope" },
+  { name: "Thank You Card", img: thankYou, link:"/thankyoucard" }
 ];
+
   return (
     <div className="home">
       
@@ -621,7 +624,7 @@ const stationery = [
 
         <div className="hero-center">
           <h4>Stationery</h4>
-          <h1>Make Your First Impression Count.</h1>
+          <p>Make Your First Impression Count.</p>
           <p>
             Premium business cards, custom designed & printed for your brand.
           </p>
@@ -642,7 +645,8 @@ const stationery = [
     </button>
 
     <div className="ad-track" ref={sliderRef}>
-      <img src={businessCard} alt="Business Card" />
+      
+    <img src={businessCard} alt="Business Card" />
       <img src={customMug} alt="Custom Mug" />
       <img src={printedTshirt} alt="Printed T-shirt" />
       <img src={standeeBanner} alt="Standee Banner" />
@@ -656,17 +660,22 @@ const stationery = [
 </section>
 
       {/* ================= STATIONERY GRID ================= */}
-      <section className="services">
-        <h2>Stationery for your brand</h2>
-        <div className="grid">
-        {stationery.map((item, index) => (
-      <div className="card" key={index}>
+  <section className="services">
+  <h2>Stationery for your brand</h2>
+
+  <div className="grid">
+    {stationery.map((item, index) => (
+      <div
+        className="card"
+        key={index}
+        onClick={() => navigate(item.link)}
+      >
         <img src={item.img} alt={item.name} className="card-image" />
         <h3>{item.name}</h3>
       </div>
     ))}
-        </div>
-      </section>
+  </div>
+</section>
 
       {/* ================= FEATURES ================= */}
       <section className="features">
@@ -745,7 +754,7 @@ const stationery = [
 <div className="blog-author">
 <img src={authorImg} alt="" />
 <div>
-<p>suresh.shivani_enterprises</p>
+<p>PROPRINTS</p>
 <span>February 11, 2026</span>
 </div>
 </div>
@@ -759,7 +768,7 @@ const stationery = [
 <div className="blog-author">
 <img src={authorImg} alt="" />
 <div>
-<p>suresh.shivani_enterprises</p>
+<p>PROPRINTS</p>
 <span>February 1, 2026</span>
 </div>
 </div>
@@ -767,13 +776,13 @@ const stationery = [
 
 <div className="blog-card">
 <h3>Top 10 Table Top Display Solution For Events</h3>
-<p>Shivani Enterprises is a customized printing company...</p>
+<p>PROPRINTS is a customized printing company...</p>
 <a href="#">Read More</a>
 
 <div className="blog-author">
 <img src={authorImg} alt="" />
 <div>
-<p>suresh.shivani_enterprises</p>
+<p>PROPRINTS</p>
 <span>November 3, 2025</span>
 </div>
 </div>
@@ -781,13 +790,13 @@ const stationery = [
 
 <div className="blog-card">
 <h3>Where to Get Clear Sticker Printing in Delhi</h3>
-<p>Shivani Enterprises manufactures more than 15 types of stickers...</p>
+<p>PROPRINTS manufactures more than 15 types of stickers...</p>
 <a href="#">Read More</a>
 
 <div className="blog-author">
 <img src={authorImg} alt="" />
 <div>
-<p>shivani_enterprises</p>
+<p>PROPRINTS</p>
 <span>February 16, 2025</span>
 </div>
 </div>

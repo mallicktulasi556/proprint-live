@@ -656,10 +656,11 @@ return (
 <div className="grid">
 {marketing.map((item,index)=>(
 <div className="card" key={index}>
-<img src={item.img}/>
-<div className="card-bottom">
-<h3>{item.title}</h3>
-<span className="arrow">→</span>
+  <img src={item.img} alt={item.title} />
+
+  <div className="card-bottom">
+    <h3 className="card-title">{item.title}</h3>
+    <span className="arrow">→</span>
 </div>
 </div>
 ))}

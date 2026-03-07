@@ -15,10 +15,18 @@ import Gift from "./screens/Gift";
 import Apparel from "./screens/Apparel";
 import Services from "./screens/Services";
 import NewArrivals from "./screens/NewArrivals";
+import VisitingCard from "./screens/VisitingCard";
+import Stamp from "./screens/Stamp";
+import BillBook from "./screens/BillBook";
+import CashVoucher from "./screens/CashVoucher";
+import Envelope from "./screens/Envelope";
+import ThankYouCard from "./screens/ThankYouCard";
+import StandardCard from "./screens/StandardCard";
+import InkStamp from "./screens/InkStamp";
 
 function App() {
   return (
-   
+ 
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -36,8 +44,16 @@ function App() {
             <Route path="/apparel" element={<Apparel />} />
              <Route path="/services" element={<Services />} />
              <Route path="/newarrivals" element={<NewArrivals />} />
-            
+              <Route path="/visitingcard" element={<VisitingCard />} />
+              <Route path="/stamp" element={<Stamp />} />
+              <Route path="/billbook" element={<BillBook />} />
+              <Route path="/cashvoucher" element={<CashVoucher />} />
+              <Route path="/envelope" element={<Envelope />} />
+              <Route path="/thankyoucard" element={<ThankYouCard />}/>
+            <Route path="/standardcard" element={<StandardCard />} />
+            <Route path="/inkstamp" element={<InkStamp />} />
       </Routes>
+
   );
 }
 
